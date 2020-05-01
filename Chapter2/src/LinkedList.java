@@ -133,7 +133,6 @@ public class LinkedList {
 
     public static void main(String[] args) {
         Node n1 = new Node(1);
-//        n1.next = n1;
         Node n2 = n1.appendToTail(2);
         Node n3 = n2.appendToTail(3);
         Node n4 = n3.appendToTail(4);
