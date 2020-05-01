@@ -105,20 +105,42 @@ public class LinkedList {
         }
     }
 
+    public static Node locateCycle(Node head) {
+        if (head == null || head.next == null || head.next.next == null) {
+            return null;
+        }
+
+        Node slow = head.next;
+        Node fast = head.next.next;
+
+        while (fast != slow) {
+            if (fast.next == null || fast.next.next == null) {
+                return null;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        fast = head;
+
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        return slow;
+    }
+
     public static void main(String[] args) {
-        Node n1 = new Node(4);
-        n1.appendToTail(4);
+        Node n1 = new Node(1);
+//        n1.next = n1;
+        Node n2 = n1.appendToTail(2);
+        Node n3 = n2.appendToTail(3);
+        Node n4 = n3.appendToTail(4);
+        n4.next = n4;
 
-        Node n2 = new Node(9);
-        n2.appendToTail(3);
-        n2.appendToTail(2);
-//        LinkedList.removeDuplicates(n);
-//        LinkedList.removeGivenNode(nodeFour);
+        Node cycleBegin = locateCycle(n1);
 
-        Node result = addIntegers(n1, n2);
-
-        printNode(result);
-
-        System.out.print("null");
+        System.out.println(cycleBegin.data);
     }
 }
