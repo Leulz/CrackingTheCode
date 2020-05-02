@@ -1,6 +1,9 @@
+import Stacks.ArrayThreeStacks.ArrayThreeStacks;
+import Stacks.MinStack.MinStack;
+
 public class StackProblems {
 
-    public static void main(String[] args) {
+    private static void ArrayThreeStacksProblem() {
         ArrayThreeStacks ats = new ArrayThreeStacks(100);
         ats.push(0, 10);
         ats.push(0, 11);
@@ -40,8 +43,42 @@ public class StackProblems {
             System.out.println(d);
         }
 
-//        System.out.println(ats.pop(0));
-//        System.out.println(ats.pop(1));
-//        System.out.println(ats.pop(2));
+        System.out.println(ats.pop(0));
+        System.out.println(ats.pop(1));
+        System.out.println(ats.pop(2));
+    }
+
+    private static void MinStackProblems() {
+        MinStack ms = new MinStack();
+
+        ms.push(22);
+        ms.push(22);
+        ms.push(22);
+        ms.push(21);
+        ms.push(22);
+        ms.push(22);
+
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+        System.out.println(ms.min());
+        ms.pop();
+    }
+
+    public static void main(String[] args) {
+        MinStackProblems();
     }
 }

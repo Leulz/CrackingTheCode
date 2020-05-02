@@ -1,3 +1,5 @@
+package Stacks.ArrayThreeStacks;
+
 public class StackNode {
     int previous;
     int data;

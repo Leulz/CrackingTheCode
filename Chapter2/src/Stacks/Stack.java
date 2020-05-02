@@ -1,5 +1,11 @@
+package Stacks;
+
+import LinkedList.Node;
+
 public class Stack {
     private Node top;
+
+    public Stack() {}
 
     public Stack(int d) {
         top = new Node(d);
