@@ -1,5 +1,6 @@
 import stacks.ArrayThreeStacks.ArrayThreeStacks;
 import stacks.MinStack.MinStack;
+import stacks.MyQueue;
 import stacks.SetOfStacks.SetOfStacks;
 
 public class StackProblems {
@@ -101,7 +102,26 @@ public class StackProblems {
         System.out.println(sos.pop());
     }
 
+    private static void MyQueueProblem() {
+        MyQueue mq = new MyQueue();
+        mq.push(10);
+        mq.push(11);
+        mq.push(12);
+        System.out.println(mq.pop());
+        mq.push(13);
+        mq.push(14);
+        mq.push(15);
+        System.out.println(mq.pop());
+        System.out.println(mq.pop());
+        System.out.println(mq.pop());
+        System.out.println(mq.pop());
+        System.out.println(mq.pop());
+        System.out.println(mq.pop());
+        System.out.println(mq.pop());
+        System.out.println(mq.pop());
+    }
+
     public static void main(String[] args) {
-        SetOfStacksProblem();
+        MyQueueProblem();
     }
 }

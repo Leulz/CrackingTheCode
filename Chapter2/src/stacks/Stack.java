@@ -26,4 +26,8 @@ public class Stack {
         top = top.next;
         return popped;
     }
+
+    public Node peek() {
+        return top;
+    }
 }
