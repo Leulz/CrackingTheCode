@@ -1,4 +1,4 @@
-package Stacks.MinStack;
+package stacks.MinStack;
 
 public class MinStackNode {
     Integer previousMin;

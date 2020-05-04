@@ -1,4 +1,6 @@
-package Stacks.ArrayThreeStacks;
+package stacks.ArrayThreeStacks;
+
+import stacks.StackNode;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,6 +1,6 @@
-package Stacks.MinStack;
+package stacks.MinStack;
 
-import Stacks.Stack;
+import stacks.Stack;
 
 import java.util.HashMap;
 

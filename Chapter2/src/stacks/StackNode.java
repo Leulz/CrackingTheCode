@@ -1,8 +1,8 @@
-package Stacks.ArrayThreeStacks;
+package stacks;
 
 public class StackNode {
-    int previous;
-    int data;
+    public int previous;
+    public int data;
 
     public StackNode(int data, int previous) {
         this.data = data;

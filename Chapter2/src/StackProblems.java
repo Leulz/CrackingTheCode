@@ -1,5 +1,6 @@
-import Stacks.ArrayThreeStacks.ArrayThreeStacks;
-import Stacks.MinStack.MinStack;
+import stacks.ArrayThreeStacks.ArrayThreeStacks;
+import stacks.MinStack.MinStack;
+import stacks.SetOfStacks.SetOfStacks;
 
 public class StackProblems {
 
@@ -78,7 +79,29 @@ public class StackProblems {
         ms.pop();
     }
 
+    private static void SetOfStacksProblem() {
+        SetOfStacks sos = new SetOfStacks(3);
+        sos.push(10);
+        sos.push(11);
+        sos.push(12);
+        sos.push(13);
+        sos.push(14);
+        sos.push(15);
+        sos.push(16);
+
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+        System.out.println(sos.pop());
+    }
+
     public static void main(String[] args) {
-        MinStackProblems();
+        SetOfStacksProblem();
     }
 }
