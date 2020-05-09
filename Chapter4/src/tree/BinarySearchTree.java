@@ -1,13 +1,10 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-
 public class BinarySearchTree {
 
     private Node root;
+
+    public BinarySearchTree() {}
 
     public BinarySearchTree(int d) {
         this.root = new Node(d);
@@ -31,8 +28,7 @@ public class BinarySearchTree {
         if (tmp == null) {
             root = n;
         }
-
-        if (d > tmp.getData()) {
+        else if (d > tmp.getData()) {
             tmp.setRight(n);
         } else {
             tmp.setLeft(n);
@@ -57,6 +53,19 @@ public class BinarySearchTree {
         }
 
         return 1 + Math.min(minHeight(n.getLeft()), minHeight(n.getRight()));
+    }
+
+    private void preorder(Node n) {
+        if (n != null) {
+            System.out.println(n.getData());
+            preorder(n.getLeft());
+            preorder(n.getRight());
+        }
+    }
+
+    public void preorder() {
+        Node current = root;
+        preorder(current);
     }
 
     public int minHeight() {

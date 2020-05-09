@@ -16,7 +16,7 @@ public class Graph {
         // node1 -> node2 -> node3
         //                \
         //                -> node4
-        
+
         System.out.println("Can node1 reach node3? " + node1.canReach(node3));
         System.out.println("Can node3 reach node1? " + node3.canReach(node1));
         System.out.println("Can node3 reach node4? " + node3.canReach(node4));
