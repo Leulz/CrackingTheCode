@@ -1,18 +1,21 @@
 package tree;
 
 import tree.nodes.Node;
+import tree.nodes.NodeWithParent;
 
-public class BinarySearchTree extends AbstractBinarySearchTree {
+public class BinarySearchTreeP extends AbstractBinarySearchTree {
 
-    public BinarySearchTree(){super();}
+    private NodeWithParent root;
 
-    public BinarySearchTree(int d) {
-        super(d);
+    public BinarySearchTreeP() {}
+
+    public BinarySearchTreeP(int d) {
+        this.root = new NodeWithParent(d, null);
     }
 
     public void addNode(int d) {
-        Node n = new Node(d);
-        Node currentNode = this.getRoot();
+        NodeWithParent n = new NodeWithParent(d);
+        Node currentNode = root;
         Node tmp = null;
 
         while (currentNode != null) {
@@ -26,12 +29,16 @@ public class BinarySearchTree extends AbstractBinarySearchTree {
         }
 
         if (tmp == null) {
-            this.setRoot(n);
+            root = n;
         }
         else if (d > tmp.getData()) {
             tmp.setRight(n);
         } else {
             tmp.setLeft(n);
         }
+
+        n.setParent(tmp);
     }
+
+
 }

@@ -1,9 +1,11 @@
-package tree;
+package tree.nodes;
 
 public class Node {
     private int data;
     private Node left;
     private Node right;
+
+    public Node() {}
 
     public Node(int data) {
         this.data = data;
