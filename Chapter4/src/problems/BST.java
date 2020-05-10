@@ -3,7 +3,6 @@ package problems;
 import tree.BSTFromArray;
 import tree.BinarySearchTree;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,5 +30,16 @@ public class BST {
         bst.preorder();
     }
 
-    public static void main(String[] args) {BSTFromArray();}
+    private static void LinkedListPerLevel() {
+        List<Integer> list = IntStream.range(1, 20).boxed().collect(Collectors.toList());
+        Collections.sort(list, Collections.reverseOrder());
+
+        BSTFromArray bstFromArray = new BSTFromArray(list);
+        BinarySearchTree bst = bstFromArray.getBST();
+
+        List<ll.Node> LLList = bst.getLLPerLevel();
+        LLList.forEach(ll.Node::printLL);
+    }
+
+    public static void main(String[] args) {LinkedListPerLevel();}
 }
