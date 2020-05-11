@@ -12,7 +12,7 @@ public class BSTFromArray {
         this.array = array;
     }
 
-    public void recur(BinarySearchTree bst, List<Integer> currentArray) {
+    public void recur(AbstractBinarySearchTree bst, List<Integer> currentArray) {
         if (currentArray.isEmpty())
             return;
 
@@ -26,10 +26,16 @@ public class BSTFromArray {
     }
 
     public BinarySearchTree getBST() {
-        int arraySize = array.size();
         BinarySearchTree bst = new BinarySearchTree();
         recur(bst, array);
 
         return bst;
+    }
+
+    public BinarySearchTreeP getBSTP() {
+        BinarySearchTreeP bstp = new BinarySearchTreeP();
+        recur(bstp, array);
+
+        return bstp;
     }
 }

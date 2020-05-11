@@ -2,6 +2,9 @@ package problems;
 
 import tree.BSTFromArray;
 import tree.BinarySearchTree;
+import tree.BinarySearchTreeP;
+import tree.nodes.Node;
+import tree.nodes.NodeWithParent;
 
 import java.util.Collections;
 import java.util.List;
@@ -22,24 +25,22 @@ public class BST {
     }
 
     private static void BSTFromArray() {
-        List<Integer> list = IntStream.range(1, 20).boxed().collect(Collectors.toList());
-        Collections.sort(list, Collections.reverseOrder());
-
-        BSTFromArray bstFromArray = new BSTFromArray(list);
-        BinarySearchTree bst = bstFromArray.getBST();
+        BinarySearchTree bst = Utils.buildBST(20);
         bst.preorder();
     }
 
     private static void LinkedListPerLevel() {
-        List<Integer> list = IntStream.range(1, 20).boxed().collect(Collectors.toList());
-        Collections.sort(list, Collections.reverseOrder());
-
-        BSTFromArray bstFromArray = new BSTFromArray(list);
-        BinarySearchTree bst = bstFromArray.getBST();
-
+        BinarySearchTree bst = Utils.buildBST(20);
         List<ll.Node> LLList = bst.getLLPerLevel();
         LLList.forEach(ll.Node::printLL);
     }
 
-    public static void main(String[] args) {LinkedListPerLevel();}
+    private static void FindNextNode() {
+        BinarySearchTreeP bstp = Utils.buildBSTP(20);
+        Node n = bstp.findNode(5);
+        bstp.preorder();
+        System.out.println("Next node is " + bstp.findNextNode((NodeWithParent) n).getData());
+    }
+
+    public static void main(String[] args) {FindNextNode();}
 }

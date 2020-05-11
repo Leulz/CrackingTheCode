@@ -39,7 +39,7 @@ public abstract class AbstractBinarySearchTree {
     }
 
     public void preorder() {
-        Node current = root;
+        Node current = getRoot();
         preorder(current);
     }
 
@@ -80,9 +80,26 @@ public abstract class AbstractBinarySearchTree {
     public List<ll.Node> getLLPerLevel() {
         int maxHeight = maxHeight();
 
-        System.out.println("maxH is " + maxHeight);
-
         return IntStream.range(0, maxHeight).mapToObj(this::getNodesInLevel).collect(Collectors.toList());
+    }
+
+    public Node findNode(int d) {
+        Node n = getRoot();
+
+        while (n != null && n.getData() != d) {
+            if (d > n.getData())
+                n = n.getRight();
+            else
+                n = n.getLeft();
+        }
+
+        return n;
+    }
+
+    public Node findLeftmostNode(Node n) {
+        while (n.getLeft() != null)
+            n = n.getLeft();
+        return n;
     }
 
     public Node getRoot() {

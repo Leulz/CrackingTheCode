@@ -1,22 +1,22 @@
 package tree.nodes;
 
 public class NodeWithParent extends Node {
-    private Node parent;
+    private NodeWithParent parent;
 
     public NodeWithParent(int data) {
         super(data);
     }
 
-    public NodeWithParent(int data, Node parent) {
+    public NodeWithParent(int data, NodeWithParent parent) {
         this(data);
         this.parent = parent;
     }
 
-    public Node getParent() {
+    public NodeWithParent getParent() {
         return parent;
     }
 
-    public void setParent(Node parent) {
+    public void setParent(NodeWithParent parent) {
         this.parent = parent;
     }
 }
